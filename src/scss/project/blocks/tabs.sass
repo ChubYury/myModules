@@ -1,0 +1,37 @@
+.tabs
+  padding: 20px 0
+  &_
+    &title
+      font-size: 35px
+  
+.tab-sing
+  &_
+    &list
+    &block
+      padding-bottom: 15px
+      transition: .3s
+      &.is-active
+        .tab-sing
+          &_
+            &content
+              display: block
+    &trigger
+      padding-bottom: 5px
+    &content
+      display: none
+.tab-multi
+  &_
+    &list
+    &triggers
+      display: flex
+      padding-bottom: 10px
+    &trigger
+      margin: 0 5px
+      padding: 5px
+      border: 1px solid black
+      cursor: pointer
+    &contents
+    &content
+      display: none
+      &.is-active
+        display: block

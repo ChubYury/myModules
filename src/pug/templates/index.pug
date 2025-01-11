@@ -1,13 +1,17 @@
 extends ./base/template
 
 block title
-  title=  "Home"
+  title=  "Modules for site"
     
 block header 
   include block/header
 
 block main
   main.page 
+    include home/text1
+    include home/text2
+    include home/text3
+    include home/tabs
     include home/main-block
         
 block footer 

@@ -1,0 +1,173 @@
+.menu
+  &_
+    &btn
+      position: relative
+      width: 30px
+      height: 18px
+      background: none
+      z-index: 15
+      cursor: pointer
+      &::before
+        position: absolute
+        content: ""
+        top: 0
+        left: 0
+        width: 100%
+        height: 10%
+        background: var(--theme-color-white)
+        transition: all .3s ease 0s
+      &::after
+        position: absolute
+        content: ""
+        width: 100%
+        height: 10%
+        left: 0
+        bottom: 0
+        background: var(--theme-color-white)
+        transition: all .3s ease 0s
+      &.is-active
+        &::before
+          top: 50%
+          transform: rotate(-45deg) translate(0, -50%)
+        &::after
+          bottom: 50%
+          transform: rotate(45deg) translate(0, 50%)
+        .menu
+          &_
+            &btn-line
+              transform: scale(0) translate(0, -50%)
+    &btn-line
+      position: absolute
+      bottom: 0
+      width: 100%
+      height: 10%
+      top: 50%
+      left: 0
+      background: var(--theme-color-white)
+      transform: scale(1) translate(0, -50%)
+      transition: all .3s ease 0s
+    // &body
+    //   position: fixed
+    //   width: 100%
+    //   height: 100%
+    //   top: 0
+    //   left: -100%
+    //   padding: 100px 30px 30px 30px
+    //   background: rgba(0,0,0,.9)
+    //   overflow: auto
+    //   transition: left .3s ease 0s
+    //   &::before
+    //     position: fixed
+    //     content: ""
+    //     width: 100%
+    //     height: 70px
+    //     top: 0
+    //     left: 0
+    //     background: var(--theme-color-base)
+    //     z-index: 2
+    //   &.is-open
+    //     left: 0
+
+    &list
+    &item
+      position: relative
+      margin: 0 0 30px 0
+      &:last-child
+        margin-bottom: 0
+    &link
+      color: var(--theme-color-white)
+      font-size: 24px
+      text-decoration: none
+      &:hover
+        text-decoration: underline
+    &sub-list
+      position: relative
+      min-width: 200px
+      padding: 15px
+      top: 100%
+      right: 0
+      background: var(--theme-color-white)
+    &sub-item
+      margin: 0 0 10px 0
+      &:last-child
+        margin: 0
+    &sub-link
+      font-size: 20px
+      color: var(--theme-color-black)
+      text-decoration: none
+      &:hover
+        text-decoration: underline
+
+//*******************************
+
+body
+  &._pc
+    .menu
+      &_
+        &item
+          &:hover
+            .menu
+              &_
+                &sub-list
+                  opacity: 1
+                  visibility: visible
+                  transform: translate(0, 0)
+                  pointer-events: all
+  &._touch
+    .menu
+      &_
+        &body
+          position: fixed
+          width: 100%
+          height: 100%
+          top: 0
+          left: -100%
+          padding: 100px 30px 30px 30px
+          background: rgba(0,0,0,.9)
+          overflow: auto
+          transition: left .3s ease 0s
+          &::before
+            position: fixed
+            content: ""
+            width: 100%
+            height: 70px
+            top: 0
+            left: 0
+            background: var(--theme-color-base)
+            z-index: 2
+          &.is-open
+            left: 0
+        &list
+          max-width: 540px
+          margin: 0 auto
+        &item
+          display: flex
+          align-items: center
+          flex-wrap: wrap
+          &.is-open
+            .menu
+              &_
+                &arrow
+                  transform: rotate(-180deg)
+                &sub-list
+                  display: block
+                  opacity: 1
+                  visibility: visible
+                  transform: translate(0, 0)
+                  pointer-events: all
+
+        &link
+          flex: 1 1 auto
+        &arrow
+          display: block
+          width: 0
+          height: 0
+          margin: 0 0 0 5px
+          border-left: 5px solid transparent
+          border-right: 5px solid transparent
+          border-top: 10px solid var(--theme-color-white)
+          transition: transform .3s ease 0s
+        &sub-list
+          flex: 1 1 100%
+          margin: 20px 0 0 0
+          display: none

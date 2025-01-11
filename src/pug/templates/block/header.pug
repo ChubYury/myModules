@@ -1,3 +1,31 @@
+.overhead
 header.header-wrap 
   .container
-    h1 My beast header
+    .header
+      a.header_logo.logo(href="/")
+        img.logo_img(src="@img/logo.png" alt="Logo")
+        h1.logo_name Modules
+      .header_menu.menu.js-head-menu
+        button.menu_btn.js-heade-menu-btn
+          span.menu_btn-line
+        nav.menu_body
+          //- .container
+          ul.menu_list
+            li.menu_item
+              a.menu_link(data-goto="block-1" href="#") Раздел №1
+            li.menu_item
+              a.menu_link(data-goto="block-2" href="#") Раздел №2
+            li.menu_item
+              a.menu_link(data-goto="block-3" href="#") Раздел №3
+            li.menu_item
+              a.menu_link(href="/") Страница №1
+              span.menu_arrow.js-head-menu-arrow
+              ul.menu_sub-list
+                li.menu_sub-item
+                  a.menu_sub-link(href="/") Раздел страницы №1
+                li.menu_sub-item
+                  a.menu_sub-link(href="/") Раздел страницы №2
+                li.menu_sub-item
+                  a.menu_sub-link(href="/") Раздел страницы №3
+            li.menu_item
+              a.menu_link(href="/") Страница №2

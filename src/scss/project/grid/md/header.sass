@@ -1,0 +1,31 @@
+.menu
+  &_
+    &btn
+      display: none
+    &body
+      position: relative
+      &::before
+        display: none
+    &list
+      display: flex
+      align-items: center
+    &item
+      margin: 0 0 0 12px
+      padding: 10px 0
+    &link
+      font-size: 14px
+    &arrow
+      display: none
+    &sub-list
+      position: absolute
+      background: var(--theme-color-black)
+      transform: translate(0px, 10%)
+      opacity: 0
+      visibility: hidden
+      transition: all .3s ease 0s
+      pointer-events: none
+    &sub-item
+    &sub-link
+      font-size: 14px
+      color: var(--theme-color-white)
+    
