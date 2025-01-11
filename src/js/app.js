@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
   //--- My modules ------
   setBodyClass();                 // 1
   // scrollHandler();                // 2
-
   initHeadMenu();                 // 3  
   initTabs();                     // 4
 })
