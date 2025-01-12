@@ -1,0 +1,42 @@
+section.form-wrap
+  .container
+    form.form(action="#", method="post")
+      h3.form_title Form Exemple
+      .form_field
+        label.form_label(for="formName") Name*: 
+        input.form_inp#formName(type="text" name="name")
+      .form_field
+        label.form_label(for="formEmail") Email*: 
+        input.form_inp#formEmail(type="email" name="email")
+      .form_field
+        p.form_lable Левша или правша?
+        .options
+          .option_item
+            input.option_input#formRightHanded(type="radio", name="hand" value="right")
+            label.option_label(for="formRightHanded") Правша 
+          .option_item
+            input.option_input#formLeftHanded(type="radio", name="hand" value="left")
+            label.option_label(for="formLeftHanded") Левша
+      .form_field
+        label.form_label(for="formMessage") Message: 
+        input.form_inp#formMessage(name="message")
+      .form_field
+        p.form_label Age:
+        select.form_select(name="age")
+          option(value="from 18 to 25" selected) Junior 
+          option(value="from 25 to 45") Middle
+          option(value="from 45") Senior
+      .form_field
+        p.form_label Add photo:
+        .form_files
+          .form_file
+            input.form_inp-file#formImage(name="imege" type="file" accept=".jpg, .png, .gif")
+            button.form_field-btn Choose
+          .form_files-preiew
+      .form_field
+        .form_checkbox-item
+          input.form_inp-checkbox#formAgreement(type="checkbox" name="agreement" checked)
+          label.form_label(for="formAgreement")
+            span Я даю свое согласие  на обработку персональных данных в соответствии с 
+            a.form_label-link(href="https://google.com" blank)
+      button.form_submit(type="submit") Send
