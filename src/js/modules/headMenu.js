@@ -1,7 +1,7 @@
 /*** The menu buttons in header *********************************
  *** Handlers a menu mobile button  
  */
-function openMobailMenu(mobileMenuBtn) {
+function clickMobailMenu(mobileMenuBtn) {
   const mainBody = document.body;
   const menuBody = mobileMenuBtn.nextSibling.nextSibling;
   
@@ -74,6 +74,6 @@ export function initHeadMenu() {
   if (isMobile) tabArrowsHandler(headerMenuBody);
   // else console.log('this pc');
   
-  openMobailMenu(mobileMenuBtn);
+  clickMobailMenu(mobileMenuBtn);
   menuLinksHandler(headerMenuBody);
 };
