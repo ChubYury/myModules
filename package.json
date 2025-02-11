@@ -41,10 +41,12 @@
     "gulp-zip": "^5.1.0",
     "otf2ttf": "^1.1.2",
     "sass": "^1.50.0",
-    "swiper": "^8.1.1",
     "vinyl-ftp": "^0.6.1",
     "webp-converter": "2.2.3",
     "webpack": "^5.72.0",
     "webpack-stream": "^7.0.0"
+  },
+  "dependencies": {
+    "@fancyapps/ui": "^5.0.36"
   }
 }
