@@ -1,42 +1,87 @@
 section.form-wrap
   .container
-    form.form(action="#", method="post")
-      h3.form_title Form Exemple
-      .form_field
-        label.form_label(for="formName") Name*: 
-        input.form_inp#formName(type="text" name="name")
-      .form_field
-        label.form_label(for="formEmail") Email*: 
-        input.form_inp#formEmail(type="email" name="email")
-      .form_field
-        p.form_lable Левша или правша?
-        .options
-          .option_item
-            input.option_input#formRightHanded(type="radio", name="hand" value="right")
-            label.option_label(for="formRightHanded") Правша 
-          .option_item
-            input.option_input#formLeftHanded(type="radio", name="hand" value="left")
-            label.option_label(for="formLeftHanded") Левша
-      .form_field
-        label.form_label(for="formMessage") Message: 
-        input.form_inp#formMessage(name="message")
-      .form_field
-        p.form_label Age:
-        select.form_select(name="age")
-          option(value="from 18 to 25" selected) Junior 
-          option(value="from 25 to 45") Middle
-          option(value="from 45") Senior
-      .form_field
-        p.form_label Add photo:
-        .form_files
-          .form_file
-            input.form_inp-file#formImage(name="imege" type="file" accept=".jpg, .png, .gif")
-            button.form_field-btn Choose
-          .form_files-preiew
-      .form_field
-        .form_checkbox-item
-          input.form_inp-checkbox#formAgreement(type="checkbox" name="agreement" checked)
-          label.form_label(for="formAgreement")
-            span Я даю свое согласие  на обработку персональных данных в соответствии с 
-            a.form_label-link(href="https://google.com" blank)
-      button.form_submit(type="submit") Send
+    .form
+      form.form_body.js-form(action="/files/sendMailSMTP.php", method="post")
+          h3.form_title Form Exemple
+          .form_field
+            label.form_label(for="formName") Name*: 
+            input.form_inp#formName(type="text" name="name" data-req="name")
+          .form_field
+            label.form_label(for="formEmail") Email*: 
+            input.form_inp#formEmail(type="email" name="email" data-req="email")
+          .form_field
+            p.form_lable Left or Right?
+            .form_options
+              .form_item-options
+                input.form_inp-options#formRightHanded(type="radio", name="hand" value="right" data-selectable checked)
+                label.form_label-options(for="formRightHanded") 
+                  span Right
+              .form_item-options
+                input.form_inp-options#formLeftHanded(type="radio", name="hand" value="left" data-selectable)
+                label.form_label-options(for="formLeftHanded") 
+                  span Left
+          .form_field
+            label.form_label(for="formMessage") Message: 
+            textarea.form_inp.form_inp--textarea#formMessage(name="message")
+          .form_field(data-selectable)
+            p.form_label Age:
+            select.form_select(name="age")
+              option(value="from 18 to 25" selected) Junior 
+              option(value="from 25 to 45") Middle
+              option(value="from 45") Senior
+          .form_field
+            p.form_label Add photo:
+            .form_files
+              .form_file
+                input.form_inp-file.js-form-set-photo#formImage(name="imege" type="file" accept=".jpg, .png, .gif")
+                button.form_btn-file Choose
+              .form_files-preiew.js-form-preview-photo#formPreview
+          .form_field
+            .form_item-checkbox
+              input.form_inp-checkbox#formAgreement(type="checkbox" name="agreement" data-req="checkbox" checked)
+              label.form_label-checkbox(for="formAgreement")
+                span Я даю свое согласие  на обработку персональных данных в соответствии с 
+                  a.form_label-link(href="https://google.com" blank) Условиями
+          button.form_submit(type="submit") Send
+    button(data-fancybox data-type='inline' data-src='#modal-form') Forma
+    .modal-form.form#modal-form
+      form.form_body.js-form(action="/files/sendMailSMTP.php", method="post")
+        h3.form_title Form Exemple
+        .form_field
+          label.form_label(for="formName") Name*: 
+          input.form_inp#formName(type="text" name="name" data-req="name")
+        .form_field
+          label.form_label(for="formEmail") Email*: 
+          input.form_inp#formEmail(type="email" name="email" data-req="email")
+        .form_field
+          p.form_lable Left or Right?
+          .form_options
+            .form_item-options
+              input.form_inp-options#modalFormRightHanded(type="radio", name="hand" value="right" checked)
+              label.form_label-options(for="modalFormRightHanded") Right
+            .form_item-options
+              input.form_inp-options#modalFormLeftHanded(type="radio", name="hand" value="left")
+              label.form_label-options(for="modalFormLeftHanded") Left
+        .form_field
+          label.form_label(for="formMessage") Message: 
+          textarea.form_inp.form_inp--textarea#formMessage(name="message")
+        .form_field
+          p.form_label Age:
+          select.form_select(name="age")
+            option(value="from 18 to 25" selected) Junior 
+            option(value="from 25 to 45") Middle
+            option(value="from 45") Senior
+        .form_field
+          p.form_label Add photo:
+          .form_files
+            .form_file
+              input.form_inp-file.js-form-set-photo#formImage(name="imege" type="file" accept=".jpg, .png, .gif")
+              button.form_btn-file Choose
+            .form_files-preiew.js-form-preview-photo#formPreview
+        .form_field
+          .form_item-checkbox
+            input.form_inp-checkbox#modalFormAgreement(type="checkbox" name="agreement" data-req="checkbox" checked)
+            label.form_label-checkbox(for="modalFormAgreement")
+              span Я даю свое согласие  на обработку персональных данных в соответствии с 
+                a.form_label-link(href="https://google.com" blank) Условиями
+        button.form_submit(type="submit") Send
