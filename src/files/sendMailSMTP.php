@@ -15,12 +15,12 @@
 
   // SMTP Configuration
   $mail->isSMTP();
-  $mail->Host = 's10.uahosting.com.ua'; // Your SMTP server
+  $mail->Host = 'host.ua'; // Your SMTP server
   $mail->SMTPAuth = true;
-  $mail->Username = 'mytes781'; // Your Mailtrap username
-  $mail->Password = 'cIe573ZS4B'; // Your Mailtrap password
+  $mail->Username = '*****'; // Your Mailtrap username
+  $mail->Password = '*****'; // Your Mailtrap password
   $mail->SMTPSecure = 'ssl';
-  $mail->Port = 465;
+  $mail->Port = ***;
 
   // Sending plain text email
   $mail->CharSet = 'UTF-8';
@@ -29,8 +29,8 @@
   $mail->Subject = 'My test post'; // Title email
 
   // Sender and recipient settings
-  $mail->setFrom('mytes781@testmoudules.pp.ua'); // From Name
-  $mail->addAddress('testison777@gmail.com'); // Recipient Name
+  $mail->setFrom('*************************'); // From Name
+  $mail->addAddress('**********************'); // Recipient Name
 
   // Creating body email
   $body = '<h1>Hoвое письмо!<h1>';
