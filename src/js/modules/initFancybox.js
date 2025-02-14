@@ -15,8 +15,8 @@ const options = {
   //     '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M4 12h16"/><path d="M13 5l7 7-7 7"/></svg>',
   // },
   Navigation: {
-    prevTpl: '<div class="red">Prev</div>',
-    nextTpl: '<div class="red">Next</div>',
+    prevTpl: 'Prev',
+    nextTpl: 'Next',
   },
   infinite: true,
   // Dots: false,
