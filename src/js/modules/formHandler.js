@@ -95,7 +95,15 @@ export function initFormsHandler() {
     setPreviewPhoto(form);
     form.addEventListener('submit', e => {
       e.preventDefault();
-      
+
+      var response = grecaptcha.getResponse();
+      if(response.length == 0) { 
+        //reCaptcha not verified
+        alert("please verify you are humann!"); 
+        evt.preventDefault();
+        return false;
+      };
+
       submitForm(form);
     });
   });
