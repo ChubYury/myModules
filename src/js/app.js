@@ -4,8 +4,9 @@ import { setBodyClass } from "./modules/isMobile.js";
 // import { scrollHandler } from "./modules/scrollHandler.js";
 import { initHeadMenu } from "./modules/headMenu.js";
 import { initTabs } from "./modules/tabs.js";
-import { initFormsHandler } from "./modules/formHandler.js";
 import { initFancybox } from "./modules/initFancybox.js";
+import { initFormsHandler } from "./modules/formHandler.js";
+import { initMap } from "./modules/mapConfig.js";
 
 document.addEventListener('DOMContentLoaded', () => {
   flsFunctions.isWebp();
@@ -19,4 +20,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeadMenu();                 // 3  
   initTabs();                     // 4
   initFormsHandler();             // 5
+  initMap(); 
 })
