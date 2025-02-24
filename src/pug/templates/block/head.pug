@@ -10,4 +10,8 @@ head
   link(rel="icon" type="image/png" sizes="192x192" href="@img/favicon.png")
   link(rel="stylesheet" type="text/css" media="all" href='./css/style.min.css')
   script(type="text/javascript", src='./js/app.min.js' defer)
-  script(src="https://www.google.com/recaptcha/api.js" async defer)
+  script(type="text/javascript").
+    var onloadCallback = function() {
+      grecaptcha.render('recaptcha-1', {'sitekey' : '6Lf0T9UqAAAAABEjgE_29bFYCBsz975swSDJNGCb'});
+      grecaptcha.render('recaptcha-2', {'sitekey' : '6Lf0T9UqAAAAABEjgE_29bFYCBsz975swSDJNGCb'});
+    };

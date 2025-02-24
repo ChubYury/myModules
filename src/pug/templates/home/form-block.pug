@@ -43,9 +43,11 @@ section.form-wrap
                 span Я даю свое согласие  на обработку персональных данных в соответствии с 
                   a.form_label-link(href="https://google.com" blank) Условиями
           .form_field
-            .g-recaptcha(data-sitekey="6Lf0T9UqAAAAABEjgE_29bFYCBsz975swSDJNGCb")
+            .form_grecaptcha.js-recaptcha#recaptcha-1(data-tabindex=0 data-req="grecaptcha")
           button.form_submit(type="submit") Send
+    //- Open modal form
     button(data-fancybox data-type='inline' data-src='#modal-form') Forma
+    
     .modal-form.form#modal-form
       form.form_body.js-form(action="/files/sendMailSMTP.php", method="post")
         h3.form_title Form Exemple
@@ -87,5 +89,5 @@ section.form-wrap
               span Я даю свое согласие  на обработку персональных данных в соответствии с 
                 a.form_label-link(href="https://google.com" blank) Условиями
         .form_field
-          .g-recaptcha(data-sitekey="6Lf0T9UqAAAAABEjgE_29bFYCBsz975swSDJNGCb")
+          .form_grecaptcha.js-recaptcha#recaptcha-2(data-tabindex=1 data-req="grecaptcha")
         button.form_submit(type="submit") Send
